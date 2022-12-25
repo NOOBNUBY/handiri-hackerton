@@ -9,9 +9,8 @@ cogs = []
 
 intents=discord.Intents.all()
 
-bot = commands.Bot(command_prefix="!@",intents=intents,debug_guilds=["1017103499785412750"])#슬래시 커맨드의 사용으로 prefix는 필요 없음, debug_guilds는 슬커 테스트용
-#실제 환경에서는 성능향상을 위해 bot안에 loop=asyncio.set_event_loop_policy(uvloop.EventLoopPolicy()) 사용
-#cogs 로딩 스크립트
+bot = commands.Bot(command_prefix="!@",intents=intents)#슬래시 커맨드의 사용으로 prefix는 필요 없음, debug_guilds는 슬커 테스트용
+
 for filename in os.listdir('./bot/cogs'):
     if filename.endswith('.py'):
         cogs.append(filename)
