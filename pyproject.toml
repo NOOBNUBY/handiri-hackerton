@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "bot-main"
+version = "0.0.1"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = "GPL3.0"
+readme = "README.md"
+packages = [{include = "bot_main"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+py-cord = {extras = ["speedup"], version = "^2.3.2"}
+redis = {extras = ["hiredis"], version = "^4.4.0"}
+motor = "^3.1.1"
+requests = "^2.28.1"
+captcha = "^0.4"
+httpx = "^0.23.1"
+waifu2x-ncnn-vulkan-python = {path = "package/waifu2x_ncnn_vulkan_python-1.0.4-cp310-cp310-win_amd64.whl"}
+cloudinary = "1.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
