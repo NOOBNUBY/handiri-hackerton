@@ -35,7 +35,7 @@ class aiart(commands.Cog):
             if ctx.channel.is_nsfw() == False:
                 negative_prompt = negative_prompt + ", nsfw"
             imgid = ''.join(random.choice(string.digits) for i in range(35))
-            url = "http://34.146.250.38:57278/sdapi/v1/txt2img"
+            url = ""
             embed = discord.Embed(title="<a:emoji_3:1056060444823015444>생성중",description="<a:emoji_2:1056059723083956254>성공적으로 생성 대기열에 추가됬어요!\n트래픽과 대기열 상태에 따라 생성이 오래걸릴수도 있어요.",color=0xEDDEA4)
             embed.set_footer(text="™Imagine💡")
             notify = await ctx.send(embed=embed,delete_after=6)

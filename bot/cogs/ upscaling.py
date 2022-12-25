@@ -14,11 +14,7 @@ from discord.ui import *
 from bot.config import *
 from bot.database.mongo_logging import *
 from bot.database.mongo_normal import *
-cloudinary.config(
-cloud_name = "melonybakjae",
-api_key = "755914447133798",
-api_secret = "3rrKs9gCwQ0itZKlNLhuG-0LYlY",
-)
+
 
 class upscale(commands.Cog):
     def __init__(self, bot):
@@ -33,7 +29,7 @@ class upscale(commands.Cog):
             mongo_logging(self.bot.mongo).insert_log(ctx.author.id,1)
             embed = discord.Embed(title="<a:emoji_1:1056059699667140678> 원하시는 사진을 보내주세요!",description="60초 안에 원하는 사진을 디스코드 채팅창에 드래그 드랍!",color=0xC1B4AE)
             embed.set_footer(text="™Imagine💡")
-            await ctx.respond(embed=embed)
+            mse = await ctx.respond(embed=embed)
             def check(m):
                 return m.author == ctx.author and m.channel == ctx.channel
             try:
